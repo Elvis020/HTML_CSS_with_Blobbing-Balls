@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+}
+
+
+html,body {
+    z-index: 0;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #0b102acc ,#0b102acc), url(./img/r.jpg);
+    background-size: cover;
+    display:grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content {
+    grid-column: 3 /span 8;
+    position: relative;
+    z-index: 0;
+    min-width: 60%;
+    margin: 0  10%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+h1,h2 {
+    text-transform: uppercase;
+    font-family: 'Merriweather';
+    letter-spacing: .05em;
+}
+
+h1 {
+    font-size: 6vw;
+    -webkit-text-stroke: 2px black;
+}
+
+h2{
+    font-size: 2vw;
+    color: deeppink;
+}
+
+p{
+    color: gray;
+    font-style: italic;
+    font-size: .8em;
+    line-height: 1.5em;
+}
+
+.intro {
+    padding: 5em 3em 2em 1em;
+    background: #fff;
+    grid-column: 0;
+    width: 46%;
+}
+
+button{
+    display: block;
+    margin-top: 20px;
+    border-radius: 50px;
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: deeppink;
+    transition: all .3s ease;
+    color: #fff;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scaleX(1.05) scaleY(1.05);
+    box-shadow: 0 2px 3px 1px rgba(0,0,0,.1);
+  }
+  button:focus{
+    outline: none;
+  }
+  button img:first-child{
+    width: 80%;
+    filter: invert(100%);
+  }
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.orbitPathCentered {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.circle01 {
+    right: 8%;
+    top: 3vh;
+    width: 18vw;
+    padding-top: 18vw;
+    transform-origin: 40% 50%;
+    background: linear-gradient(#f439d6, #f4b771);
+    animation: rotate 7s linear infinite;
+}
+
+.orbiting-circle01{
+    width: 3.5vw;
+    padding-top: 3.5vw;
+    margin-top: 4vw;
+    background: linear-gradient(#f536d0, #ab02f3);
+}
+
+.border-plus{
+    border: 1px solid #4fe3ff;
+    z-index: -1;
+}
+
+.orbitPath01-border{
+    top: 70vh;
+    left: 45%;
+    width: 24vw;
+    height: 24vw;
+    animation: rotatePath 50s linear infinte;
+}
+
+.orbitPath01{
+    top: 70vh;
+    left: 45%;
+    z-index: 10;
+    width: 24vw;
+    height: 24vw;
+    animation: rotatePath 50s linear infinte;
+}
+
+.orbitPath01:before {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    content: "";
+    width: 5vw;
+    padding-top: 5vw;
+    left: 0;
+    transform: rotateX(-50%);
+    background: linear-gradient(#f2e91b, #b4ff2f);
+}
+.orbitPath02_border {
+    top: calc(70vh + 12vw);
+    left: calc(45% + 12vw);
+    width: 18vw;
+    height: 18vw;
+    animation: rotatePathInside 30s linear infinte;
+}
+
+
+
+.orbitPath02_border:before {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    content: "";
+    width: 2vw;
+    padding-top: 2vw;
+    bottom: 0;
+    transform: translateY(50%);
+    background: linear-gradient(#4ee0f8, #3ba2fe);
+}
+
+.circle02{
+    top: calc(70vh + 12vw);
+    left: calc(45% + 12vw);
+    z-index: 10;
+    width: 12vw;
+    padding-top: 12vw;
+    background: linear-gradient(#4fe3ff, #9117ff);
+    transform-origin: 48% 48%;
+    animation: rotatePathInside 30s linear infinite;
+}
+
+.border_orange{
+    border: 1px solid deepskyblue;
+    z-index: -1;
+}
+
+.circle03{
+    top: 5%;
+    left: 35%;
+    width: 32vw;
+    height: 32vw;
+    transform-origin: 46% 50%;
+    animation: rotateBob 30s linear infinite;
+}
+
+.circle03:after {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    content: "";
+    left: calc(50% - 2.5vw);
+    top: calc(0% - 2.5vw);
+    width: 5vw;
+    padding-top: 5vw;
+    background: linear-gradient(#ff6d0f, #ff2300);
+}
+
+.circle04{
+    right: 90%;
+    top: 60%;
+    width: 5vw;
+    padding-top: 5vw;
+    top: 40% 50%;
+    background: linear-gradient(#fde213, #ef9004);
+    animation: rotateBob 2s linear infinite;
+}
+
+
+/* Animation Keyframes */
+
+@keyframes rotate{
+    0%{
+      transform: rotateZ(0deg);
+    }
+    100%{
+      transform: rotateZ(360deg);
+    }
+  }
+  @keyframes rotatePath{
+    0%{
+      transform: rotateZ(0deg);
+      filter: hue-rotate(0);
+    }
+    100%{
+      transform: rotateZ(360deg);
+      filter: hue-rotate(360);
+    }
+  }
+  @keyframes rotatePathInside{
+    0%{
+      transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+    }
+    100%{
+      transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+    }
+  }
+  @keyframes rotateBob{
+    0%{
+      transform: translateY(0) rotateZ(0deg);
+    }
+    50%{
+      transform: translateY(-3vh) rotateZ(180deg);
+    }
+    100%{
+      transform: translateY(0) rotateZ(360deg);
+    }
+  }
